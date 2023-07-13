@@ -1,3 +1,4 @@
+-- Create users table with column id, email, name, country, primkey is id
 CREATE TABLE IF NOT EXISTS users (
     id INT NOT NULL AUTO_INCREMENT,
     email VARCHAR(255) NOT NULL UNIQUE,
