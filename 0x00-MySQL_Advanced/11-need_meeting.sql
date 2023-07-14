@@ -5,4 +5,4 @@ SELECT name FROM students
 WHERE
     score < 80 AND
     (last_meeting IS NULL OR
-    (DATEDIFF(MONTH, last_meeting, CURDATE()) >= 1));
+    last_meeting < ADDDATE(CURDATE(), interval -1 MONTH));
