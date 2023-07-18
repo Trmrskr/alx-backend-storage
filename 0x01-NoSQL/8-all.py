@@ -8,6 +8,9 @@ def list_all(mongo_collection):
     @mongo_collection: a collection object
     returns documents from a collection.
     """
+
+    if mongo_collection is None:
+        return []
     collections = mongo_collection.find()
     
     if not collections:
