@@ -1,2 +1,2 @@
 // Regex filter
-db.school.find({"name": /^holberton*/})
+db.school.find({"name": /^Holberton/})
