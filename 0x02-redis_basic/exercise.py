@@ -27,6 +27,7 @@ def count_calls(method: Callable) -> Callable:
         return method(self, *args, **kwargs)
     return wrapper
 
+
 def call_history(method: Callable) -> Callable:
     """
     A wrapper function that records the call history of a function
@@ -47,6 +48,7 @@ def call_history(method: Callable) -> Callable:
         return data
     return wrapper
 
+
 def replay(method: Callable) -> None:
     """
     Replays the history of a function
@@ -64,6 +66,7 @@ def replay(method: Callable) -> None:
     for i, o in zip(inputs, outputs):
         print("{}(*{}) -> {}".format(name, i.decode('utf-8'),
                                      o.decode('utf-8')))
+
 
 class Cache:
     """
@@ -113,6 +116,6 @@ class Cache:
         value = self._redis.get(key)
         try:
             value = int(value.decode('utf-8'))
-        except:
+        except TypeError:
             value = 0
         return value
